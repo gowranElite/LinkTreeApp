@@ -83,7 +83,7 @@ h2 {
   width: clamp(32px, 12vw, 48px);
   height: clamp(32px, 12vw, 58px);
   flex-shrink: 0;
-  border-radius: 2vw;
+  border-radius: 1vw;
 }
 
 .admin-button {
