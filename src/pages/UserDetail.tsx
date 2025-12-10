@@ -4,7 +4,7 @@ import "./UserDetail.css";
 import Footer from "../components/Footer";
 import { supabase } from "../supabaseClient";
 
-// ✅ Import icons
+
 import emailIcon from "../assets/email.svg";
 import phoneIcon from "../assets/phone.svg";
 import linkedinIcon from "../assets/linkedin.svg";
@@ -65,7 +65,7 @@ const UserDetail: React.FC = () => {
           <img src={emailIcon} alt="Email" className="icon" />
           <div className="info-inline">
             <p className="info-label">E-mail</p>
-            <p className="info-value">{user.email}</p>
+           <p className="info-value email">{user.email}</p>
           </div>
           <img src={arrowIcon} alt="Arrow" className="arrow" />
         </a>

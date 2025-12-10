@@ -3,8 +3,7 @@
   --max-width: 480px;
   --radius-large: 20px;
   --radius-medium: 12px;
-  --spacing: 24px; /* slightly increased for nicer spacing */
-  
+  --spacing: 20px;
 }
 
 /* Prevent horizontal scroll */
@@ -12,8 +11,7 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   font-family: "CoolFont1";
-  font-size: 1.225rem;
-
+  font-size: 1.1rem;
 }
 
 /* MAIN CONTAINER */
@@ -21,8 +19,7 @@ html, body {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  padding: calc(var(--spacing) + 5px) var(--spacing) var(--spacing); 
-  /* ^ Increased top padding so profile pic starts lower */
+  padding: calc(var(--spacing) + 5px) var(--spacing) var(--spacing);
   padding-bottom: calc(var(--spacing) + env(safe-area-inset-bottom));
   background-color: #002b52;
   color: #fff;
@@ -30,28 +27,29 @@ html, body {
   box-sizing: border-box;
 }
 
-/* PROFILE IMAGE — larger + pushed down + centered */
+/* PROFILE IMAGE */
 .profile-image {
-  width: 40vw;
-  max-width: 160px;
-  height: 40vw;
-  max-height: 160px;
+  width: 36vw;
+  max-width: 140px;
+  height: 36vw;
+  max-height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 12px; /* more spacing below */
+  margin: 0 auto 12px;
   border: 3px solid #fff;
   display: block;
 }
 
 /* TEXT */
 h1 {
-  font-size: clamp(1.4rem, 5vw, 1.8rem);
-  margin-bottom: 3px;
+  font-size: clamp(1.3rem, 5vw, 1.7rem);
+  margin-bottom: 4px;
+  text-align: center;
 }
 
 h2 {
-  font-size: clamp(1.05rem, 4vw, 1.3rem);
-  margin-bottom: 1.4rem;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  margin-bottom: 1rem;
   color: #d0d6e1;
   text-align: center;
 }
@@ -60,105 +58,91 @@ h2 {
 .contact-buttons {
   display: flex;
   flex-direction: column;
-  gap: 13px; /* taller spacing between items */
-  margin-top: 2px;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 /* CONTACT CARD BUTTONS */
 .contact-buttons a {
   display: flex;
   align-items: center;
-  gap: 16px;                                /* more space between icon + text */
+  justify-content: space-between;   /* arrow stays on the right */
+  gap: 14px;
   width: 100%;
   background-color: #005799;
   color: white;
   text-decoration: none;
-  padding: 12px 18px;                        /* taller buttons */
+  padding: 0 16px;                  /* horizontal padding only */
   border-radius: 0.7rem;
-  font-size: clamp(1rem, 4vw, 1.1rem);       /* slightly bigger text */
-  justify-content: flex-start;
   box-sizing: border-box;
+
+  /* ✅ Force consistent size */
+  height: 64px;                     /* all buttons same height */
+  min-height: 64px;
+  max-height: 64px;
 }
 
-/* ICONS — increased size */
+/* ICONS */
 .contact-buttons .icon {
-  width: clamp(32px, 12vw, 48px);
-  height: clamp(32px, 12vw, 58px);
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
-  border-radius: 2vw;
+  border-radius: 4px;
 }
-
-.admin-button {
-  position: absolute;     /* float above other content */
-  top: 16px;              /* distance from top of container */
-  right: 16px;            /* distance from right of container */
-  border: none;
-  border-radius: var(--radius-medium);
-  background-color: #4a6075;;
-  color: white;
-  font-size: clamp(1rem, 4vw, 1.2rem);
-  padding: 8px 12px;     /* add some padding */
-  cursor: pointer;
-  z-index: 10;            /* ensure it sits above other elements */
-}
-
-
-
-
 
 /* Inline info inside contact-buttons */
 .info-inline {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-width: 0;                     /* allow text to shrink */
+  justify-content: center;          /* vertically center text */
 }
 
+/* Labels stay consistent */
 .info-label {
-  font-size: clamp(1rem, 3.9vw, 1.1rem);
-  color: #d0d6e1; /* grayish like Title */
+  font-size: 1rem;                  /* fixed size */
+  color: #d0d6e1;
   margin: 0;
+  line-height: 1.2;
 }
 
+/* Values shrink if too long */
 .info-value {
-  
-  color: #fff;
   margin: 0;
-  word-break: break-word;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.85rem, 2.5vw, 1rem); /* shrink only if needed */
+  line-height: 1.2;
 }
 
-.contact-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* pushes arrow to the right */
-  padding: 10px;
-  text-decoration: none;
-  color: inherit;
-}
-
+/* Arrow */
 .arrow {
-  width: 1rem;   /* adjust size */
+  width: 1rem;
   height: 1rem;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
-
-
-
+/* FOOTER */
 .footer {
-  margin-top: 40px; /* more separation from above content */
-  padding: 24px 0 28px;
+  margin-top: 32px;
+  padding: 20px 0 24px;
   text-align: center;
   color: #d0d6e1;
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* divider line */
+  font-size: clamp(0.85rem, 2.8vw, 1rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-text {
-  margin-top: 25px; /* spacing before logo */
+  margin-top: 16px;
 }
 
 .footer-logo {
   display: block;
   margin: 0 auto;
-  width: clamp(90px, 45vw, 180px); /* bigger responsive logo */
+  width: clamp(80px, 35vw, 160px);
   height: auto;
 }
