@@ -1,0 +1,148 @@
+/* ROOT: scalable sizes depending on screen */
+:root {
+  --max-width: 480px;
+  --radius-large: 20px;
+  --radius-medium: 12px;
+  --spacing: 24px; /* slightly increased for nicer spacing */
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "CoolFont1";
+  font-size: 1.225rem;
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: calc(var(--spacing) + 20px) var(--spacing) var(--spacing); 
+  /* ^ Increased top padding so profile pic starts lower */
+  padding-bottom: calc(var(--spacing) + env(safe-area-inset-bottom));
+  background-color: #002b52;
+  color: #fff;
+  border-radius: var(--radius-large);
+  box-sizing: border-box;
+}
+
+/* PROFILE IMAGE — larger + pushed down + centered */
+.profile-image {
+  width: 40vw;
+  max-width: 160px;
+  height: 40vw;
+  max-height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 24px; /* more spacing below */
+  border: 3px solid #fff;
+  display: block;
+}
+
+/* TEXT */
+h1 {
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: clamp(1.05rem, 4vw, 1.3rem);
+  margin-bottom: 1.4rem;
+  color: #d0d6e1;
+  text-align: center;
+}
+
+/* CONTACT BUTTON LIST */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* taller spacing between items */
+  margin-top: 24px;
+}
+
+/* CONTACT CARD BUTTONS */
+.contact-buttons a {
+  display: flex;
+  align-items: center;
+  gap: 16px;                                /* more space between icon + text */
+  width: 100%;
+  background-color: #005799;
+  color: white;
+  text-decoration: none;
+  padding: 18px 18px;                        /* taller buttons */
+  border-radius: var(--radius-medium);
+  font-size: clamp(1rem, 4vw, 1.1rem);       /* slightly bigger text */
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* ICONS — increased size */
+.contact-buttons .icon {
+  width: clamp(32px, 12vw, 48px);
+  height: clamp(32px, 12vw, 58px);
+  flex-shrink: 0;
+  border-radius: 2vw;
+}
+
+.admin-button {
+  position: absolute;     /* float above other content */
+  top: 16px;              /* distance from top of container */
+  right: 16px;            /* distance from right of container */
+  border: none;
+  border-radius: var(--radius-medium);
+  background-color: #4a6075;;
+  color: white;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  padding: 8px 12px;     /* add some padding */
+  cursor: pointer;
+  z-index: 10;            /* ensure it sits above other elements */
+}
+
+
+
+
+
+/* Inline info inside contact-buttons */
+.info-inline {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: clamp(1rem, 3.9vw, 1.1rem);
+  color: #d0d6e1; /* grayish like Title */
+  margin: 0;
+}
+
+.info-value {
+  
+  color: #fff;
+  margin: 0;
+  word-break: break-word;
+}
+
+
+
+
+
+.footer {
+  margin-top: 50px; /* more separation from above content */
+  padding: 24px 0 28px;
+  text-align: center;
+  color: #d0d6e1;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* divider line */
+}
+
+.footer-text {
+  margin-top: 25px; /* spacing before logo */
+}
+
+.footer-logo {
+  display: block;
+  margin: 0 auto;
+  width: clamp(90px, 35vw, 180px); /* bigger responsive logo */
+  height: auto;
+}

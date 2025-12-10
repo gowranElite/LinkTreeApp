@@ -1,0 +1,78 @@
+/* Admin form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.form input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+/* User card list */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-card {
+  background: #132b5c;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.user-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.user-card p {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: #d0d6e1;
+}
+
+.user-card .actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.user-card .actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.user-card .actions button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.user-card .actions button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
