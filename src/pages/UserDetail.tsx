@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import "./UserDetail.css";
 import Footer from "../components/Footer";
 import { supabase } from "../supabaseClient"; 
@@ -17,7 +17,7 @@ interface User {
 const UserDetail: React.FC = () => {
   const { slug } = useParams();
   const [user, setUser] = useState<User | null>(null);
-  const navigate = useNavigate();
+
 
 useEffect(() => {
     const fetchUser = async () => {
